@@ -4,6 +4,8 @@
 
 ## Imaging
 
-### This is an the imaging folder that converts images into ASCII images. To use: python img.py {image file}. Changes image file into img.txt. Best viewed with Notepad or any text editor that doesn't use line wrap
+This is an the imaging folder that converts images into ASCII images.
+
+To use: python img.py {image file}. Changes image file into img.txt. Best viewed with Notepad or any text editor that doesn't use line wrap.
 
 ## TBA
