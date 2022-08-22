@@ -3,11 +3,9 @@ from PIL import Image
 ASCII_CHARS = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~i!lI;:,\"^`'. ")
 ASCII_CHARS = ASCII_CHARS[::+1]
 
-'''
-method resize():
-    - takes as parameters the image, and the final width
-    - resizes the image into the final width while maintaining aspect ratio
-'''
+    # - takes as parameters the image, and the final width
+    # - resizes the image into the final width while maintaining aspect ratio
+
 def resize(image, new_width=975):
     (old_width, old_height) = image.size
     aspect_ratio = float(old_height)/float(old_width)
@@ -15,18 +13,15 @@ def resize(image, new_width=975):
     new_dim = (new_width, new_height)
     new_image = image.resize(new_dim)
     return new_image
-'''
-method grayscalify():
-    - takes an image as a parameter
-    - returns the grayscale version of image
-'''
+
+    # - takes an image as a parameter
+    # - returns the grayscale version of image
 def grayscalify(image):
     return image.convert('L')
 
-'''
-method modify():
-    - replaces every pixel with a character whose intensity is similar
-'''
+
+    # replaces every pixel with a character whose intensity is similar
+
 def modify(image, buckets=35):
     initial_pixels = list(image.getdata())
     new_pixels = [ASCII_CHARS[pixel_value//buckets] for pixel_value in initial_pixels]
@@ -48,12 +43,10 @@ def do(image, new_width=975):
 
     return '\n'.join(new_image)
 
-'''
-method runner():
-    - takes as parameter the image path and runs the above code
-    - handles exceptions as well
-    - provides alternative output options
-'''
+    # - takes as parameter the image path and runs the above code
+    # - handles exceptions as well
+    # - provides alternative output options
+    
 def runner(path):
     image = None
     try:
@@ -65,21 +58,16 @@ def runner(path):
     image = do(image)
 
     # To print on console
-    #print(image)
+#    print(image)
 
-    # Else, to write into a file
-    # Note: This text file will be created by default under
-    #       the same directory as this python file,
-    #       NOT in the directory from where the image is pulled.
+    # Else, to write into a file in the same directory as 'img.py'
     f = open('img.txt','w')
     f.write(image)
     f.close()
 
-'''
-method main():
-    - reads input from console
-    - profit
-'''
+    # - reads input from console
+    # - makes ASCII art
+    
 if __name__ == '__main__':
     import sys
     import urllib.request
@@ -89,6 +77,6 @@ if __name__ == '__main__':
     else:
         path = sys.argv[1]
     runner(path)
-    print('Done')
+    print('Done. created img.txt in the same directory as img.py')
 
 
