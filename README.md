@@ -8,4 +8,8 @@ This is an the imaging folder that converts images into ASCII images.
 
 To use: python img.py {image file}. Changes image file into img.txt. Best viewed with Notepad or any text editor that doesn't use line wrap.
 
+## Names
+
+This is a random name generator. Any number random names of your choice, will be generated. The code will also rule out any duplicate names.
+
 ## TBA
