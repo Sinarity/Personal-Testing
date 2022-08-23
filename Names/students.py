@@ -13,12 +13,10 @@ nameid = homeroom
 
 while nameid != 0:
     students.append(names.get_first_name(gender=""))
-    nameid-=1
+    nameid -= 1
 students = list(set(students))
 
 for i in range(len(students)):
-    print(i +1, students[i])
+    print(i + 1, students[i])
     sleep(0.01)
 print(f"You removed {homeroom - i} duplicates.")
-    
-    
