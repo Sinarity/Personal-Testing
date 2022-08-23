@@ -10,6 +10,6 @@ To use: python img.py {image file}. Changes image file into img.txt. Best viewed
 
 ## Names
 
-This is a random name generator. Any number random names of your choice, will be generated. The code will also rule out any duplicate names.
+This is a random name generator. Any number random names of your choice, will be generated. The code will also rule out any duplicate names. Sorting the names still needs to be coded sometime.
 
 ## TBA
