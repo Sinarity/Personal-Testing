@@ -12,4 +12,10 @@ To use: python img.py {image file}. Changes image file into img.txt. Best viewed
 
 This is a random name generator. Any number random names of your choice, will be generated. The code will also rule out any duplicate names. Sorting the names still needs to be coded sometime.
 
+## Number
+
+This is a random number generator, however, it generates for two variables and attempts to match then together. The code itself was constructed to ensure it is compatible with less than average PCs and laptops as the entire console print was done on a single line. This effectivly allows the program to try and match random numbers between very large digits.
+
+To use, simply change the values of variables 'i' and 'j' and run the program.
+
 ## TBA
