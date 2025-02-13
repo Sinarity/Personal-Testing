@@ -44,12 +44,6 @@ def modify(image, buckets=35):
     return "".join(new_pixels)
 
 
-"""
-method do():
-    - does all the work by calling all the above functions
-"""
-
-
 def do(image, new_width=input_width):
     image = resize(image)
     image = grayscalify(image)
