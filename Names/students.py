@@ -19,7 +19,7 @@ for i in range(homeroom):
 # for random full names, use name()
 # for random first names, use first_name()
 # for random last names, use last_name() 
-students = list(set(students))
+students = list(sorted(set(students)))
 #removes duplicates
 
 for i in range(len(students)):
