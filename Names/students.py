@@ -1,20 +1,26 @@
-import names
 from time import sleep
+from faker import Faker
+
+fake = Faker()
+
 
 students = []
 
-homeroom = 3000
+
+homeroom = int(input("How many students are in your homeroom? "))
+
 
 nameid = homeroom
 
-# for random full names, use names.get_full_name() gender="male/female" is optional.
-# for random first names, use names.get_first_name() gender="male/female" is optional.
-# for random last names, use names.get_last_name() gender="male/female" is optional.
 
-while nameid != 0:
-    students.append(names.get_first_name(gender=""))
-    nameid -= 1
+for i in range(homeroom):
+    students.append(fake.name())
+
+# for random full names, use name()
+# for random first names, use first_name()
+# for random last names, use last_name() 
 students = list(set(students))
+#removes duplicates
 
 for i in range(len(students)):
     print(i + 1, students[i])
