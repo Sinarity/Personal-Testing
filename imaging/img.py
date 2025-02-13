@@ -1,4 +1,7 @@
-from PIL import Image
+from PIL import Image, ImageChops
+
+
+input_width = int(input("How wide do you want you image to be?: "))
 
 ASCII_CHARS = list(
     "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~i!lI;:,\"^`'. "
@@ -9,7 +12,7 @@ ASCII_CHARS = ASCII_CHARS[::+1]
 # - resizes the image into the final width while maintaining aspect ratio
 
 
-def resize(image, new_width=975):
+def resize(image, new_width=input_width):
     (old_width, old_height) = image.size
     aspect_ratio = float(old_height) / float(old_width)
     new_height = int(aspect_ratio * new_width)
@@ -23,8 +26,16 @@ def resize(image, new_width=975):
 
 def grayscalify(image):
     return image.convert("L")
+    
+    
 
     # replaces every pixel with a character whose intensity is similar
+
+def invertify(image):
+    return ImageChops.invert(image)
+    
+
+    #inverts the image
 
 
 def modify(image, buckets=35):
@@ -39,9 +50,11 @@ method do():
 """
 
 
-def do(image, new_width=975):
+def do(image, new_width=input_width):
     image = resize(image)
     image = grayscalify(image)
+    #image = invertify(image)
+        #Inverts the image so that it might be easier to see
 
     pixels = modify(image)
     len_pixels = len(pixels)
@@ -64,6 +77,7 @@ def runner(path):
         image = Image.open(path)
     except Exception:
         print("Unable to find image in", path)
+        print("Please check the image path and try again")
         # print(e)
         return
     image = do(image)
@@ -75,6 +89,8 @@ def runner(path):
     f = open("img.txt", "w")
     f.write(image)
     f.close()
+
+    print("ASCII art written to img.txt")
 
     # - reads input from console
     # - makes ASCII art
@@ -89,5 +105,6 @@ if __name__ == "__main__":
         path = "asciify.jpg"
     else:
         path = sys.argv[1]
+    
     runner(path)
-    print("Done. created img.txt in the same directory as img.py")
+    
