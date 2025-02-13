@@ -6,7 +6,7 @@
 
 This is an the imaging folder that converts images into ASCII images.
 
-To use: python img.py {image file}. Changes image file into img.txt. Best viewed with any text editor that doesn't use line wrap (For me, I used Notepad at 10% zoom with Lucida Console Regular text at size 7). Please note the image needs to be monochome/greyscale. Also note that you might need to invert the image colors if you want to display on a white background. I have no idea why, but sometimes, the ASCII image doesn't show the original colors that easily, and prefers the inverted version.
+To use: python img.py {image file}. Changes image file into img.txt. Best viewed with any text editor that doesn't use line wrap (For me, I used Notepad at 10% zoom with Lucida Console Regular text at size 7). Please note the image needs to be within the same directory as the python code. Edit: As of 13/02/2025, the code can now be modular, allowing the user to ask for how many characters in width the image should be (and will scale appropriately to it).
 
 ## Names
 
